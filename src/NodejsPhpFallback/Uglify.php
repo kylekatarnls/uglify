@@ -2,7 +2,6 @@
 
 namespace NodejsPhpFallback;
 
-use CoffeeScript\Compiler as PhpUglifyEngine;
 use GK\JavascriptPacker as Packer;
 
 class Uglify extends Wrapper
@@ -11,7 +10,7 @@ class Uglify extends Wrapper
     protected $concat = array();
 
     protected $programs = array(
-        'js' => 'uglify',
+        'js'  => 'uglify',
         'css' => 'clean',
     );
 
