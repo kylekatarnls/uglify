@@ -2,8 +2,8 @@
 
 namespace NodejsPhpFallback;
 
-use GK\JavascriptPacker as Packer;
-use CssMin;
+use GK\JavascriptPacker as JavascriptMinifier;
+use CssMin as CssMininifer;
 
 class Uglify extends Wrapper
 {
@@ -103,11 +103,11 @@ class Uglify extends Wrapper
     public function fallback()
     {
         if ($this->getMode() === 'js') {
-            $packer = new Packer($this->getSource());
+            $packer = new JavascriptMinifier($this->getSource());
 
             return $packer->pack();
         }
 
-        return CssMin::minify($this->getSource());
+        return CssMininifer::minify($this->getSource());
     }
 }
