@@ -99,4 +99,18 @@ class UglifyTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame($expected, $log, 'Uglify should render without node.');
     }
+
+    public function testFallbackWrite()
+    {
+        $uglify = new Uglify(array(__DIR__ . '/test.css'));
+        $uglify->add(__DIR__ . '/test2.css');
+        $expected = $this->getExpectedCss();
+        $file = $this->getTempCss();
+        $uglify->write($file);
+        $css = file_get_contents($file);
+        unlink($file);
+
+        $this->assertSame($expected, $css, 'Uglify should render without node.');
+        $this->assertSame($expected, $uglify->fallback(), 'Uglify should render without node.');
+    }
 }

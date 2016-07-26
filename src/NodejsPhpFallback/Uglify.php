@@ -3,6 +3,7 @@
 namespace NodejsPhpFallback;
 
 use GK\JavascriptPacker as Packer;
+use CssMin;
 
 class Uglify extends Wrapper
 {
