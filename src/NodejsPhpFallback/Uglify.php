@@ -2,8 +2,8 @@
 
 namespace NodejsPhpFallback;
 
-use GK\JavascriptPacker as JavascriptMinifier;
 use CssMin as CssMininifer;
+use GK\JavascriptPacker as JavascriptMinifier;
 
 class Uglify extends Wrapper
 {
