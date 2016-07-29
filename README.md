@@ -15,7 +15,7 @@ First you need [composer](https://getcomposer.org/) if you have not already. The
 
 use NodejsPhpFallback\Uglify;
 
-// Require the composer autload in your PHP file if it's not already.
+// Require the composer autoload in your PHP file if it's not already.
 // You do not need to if you use a framework with composer like Symfony, Laravel, etc.
 require 'vendor/autoload.php';
 

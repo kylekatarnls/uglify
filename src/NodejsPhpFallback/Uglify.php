@@ -37,12 +37,12 @@ class Uglify extends Wrapper
 
     public function getSource()
     {
-        $source = trim(parent::getSource());
+        $source = parent::getSource();
         foreach ($this->concat as $file) {
             if ($this->getMode() === 'js') {
-                $source = rtrim($source, '; ') . ';';
+                $source .= "\n;";
             }
-            $source .= trim(file_get_contents($file));
+            $source .= "\n" . file_get_contents($file);
         }
 
         return $source;
