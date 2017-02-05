@@ -11,8 +11,8 @@ class Uglify extends Wrapper
     protected $concat = array();
 
     protected $programs = array(
-        'js'  => 'uglify',
-        'css' => 'clean',
+        'js'  => array('uglify-js/bin/', 'uglifyjs'),
+        'css' => array('clean-css/', 'index.js'),
     );
 
     public function __construct($file)
@@ -87,15 +87,15 @@ class Uglify extends Wrapper
     public function compile()
     {
         $language = $this->getMode();
-        $program = $this->programs[$language];
+        list($programDirectory, $programFile) = $this->programs[$language];
         $name = $this->path ? basename($this->path) : null;
 
         $path = sys_get_temp_dir() . DIRECTORY_SEPARATOR . $name;
         file_put_contents($path, $this->getSource());
 
         return $this->execModuleScript(
-            $program . '-' . $language,
-            'bin/' . $program . $language,
+            $programDirectory,
+            $programFile,
             escapeshellarg($path)
         );
     }
