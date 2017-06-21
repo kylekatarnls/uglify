@@ -88,7 +88,8 @@ class Uglify extends Wrapper
     {
         $language = $this->getMode();
         list($programDirectory, $programFile) = $this->programs[$language];
-        $name = $this->path ? basename($this->path) : null;
+        $path = $this->getPath();
+        $name = $path ? basename($path) : null;
 
         $path = sys_get_temp_dir() . DIRECTORY_SEPARATOR . $name;
         file_put_contents($path, $this->getSource());
