@@ -2,6 +2,7 @@
     "name": "nodejs-php-fallback/uglify",
     "description": "PHP wrapper to execute uglify-js/clean-css node package or fallback to PHP alternatives",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Kyle",
