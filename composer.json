@@ -11,7 +11,7 @@
     ],
     "require": {
         "nodejs-php-fallback/nodejs-php-fallback": "^1.2.3",
-        "natxet/CssMin": "*",
+        "natxet/cssmin": "*",
         "gkralik/php-uglifyjs": "*"
     },
     "extra": {
