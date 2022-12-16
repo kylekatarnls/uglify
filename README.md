@@ -45,3 +45,9 @@ echo $uglify; // display minified css
 echo $uglify->getMinifiedJs(); // display minified javascript
 echo $uglify->getMinifiedCss(); // display minified css
 ```
+
+## Security contact information
+
+To report a security vulnerability, please use the
+[Tidelift security contact](https://tidelift.com/security).
+Tidelift will coordinate the fix and disclosure.
